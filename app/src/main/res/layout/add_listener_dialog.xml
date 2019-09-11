@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:text="@string/description_listener_dialog"
+            android:gravity="center"
+            android:id="@+id/description_listener_dialog"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <CheckBox
+            android:layout_marginTop="5dp"
+            android:id="@+id/more"
+            android:text="@string/more"
+            app:layout_constraintTop_toBottomOf="@+id/description_listener_dialog"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/less"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <CheckBox
+            android:layout_marginTop="5dp"
+            android:id="@+id/less"
+            android:text="@string/less"
+            app:layout_constraintTop_toBottomOf="@+id/description_listener_dialog"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            android:id="@+id/count_degrees"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <EditText
+                android:id="@+id/degrees_listener_dialog"
+                android:inputType="numberDecimal"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@string/text_degrees"
+                android:id="@+id/text_degrees_listener_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+            android:text="@string/cancel"
+            android:id="@+id/cancel_listener_dialog"
+            app:layout_constraintTop_toBottomOf="@+id/count_degrees"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ok_listener_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+    <Button
+            android:text="@string/ok"
+            android:id="@+id/ok_listener_dialog"
+            app:layout_constraintTop_toBottomOf="@+id/count_degrees"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/cancel_listener_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/count_degrees"
+            android:id="@+id/loading_listener_dialog"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cpv_animAutostart="true"
+            app:cpv_color="@color/colorPrimary"
+            app:cpv_indeterminate="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
